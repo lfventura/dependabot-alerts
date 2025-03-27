@@ -28,7 +28,7 @@ The following inputs can be configured in the workflow:
 
 | Input                  | Description                                                                 | Required | Default                          |
 |------------------------|---------------------------------------------------------------------------|----------|----------------------------------|
-| `github_token`         | The GitHub token used to authenticate API requests.                        | No       | `${{ github.token }}`           |
+| `github_token`         | The GitHub token used to authenticate API requests. It needs to be a PAT token with the `dependabot` read scope.                      | No       | `${{ github.token }}`           |
 | `owner`                | The owner of the repository.                                               | No       | `${{ github.repository_owner }}`|
 | `repo`                 | The name of the repository.                                                | No       | `${{ github.event.repository.name }}` |
 | `max_high_alerts`      | Maximum allowed high severity alerts.                                      | No       | None (will only notify but will not break)                             |
