@@ -32,5 +32,4 @@ jobs:
           max_high_alerts: 0
           max_medium_alerts: 0
           max_low_alerts: 0
-          max_note_alerts: 0
           do_not_break_pr_check: false
