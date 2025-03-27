@@ -21,7 +21,7 @@ export async function run(): Promise<void> {
     const octokit: ReturnType<typeof github.getOctokit> =
       github.getOctokit(token);
 
-    // Fetch Code Scanning Alerts
+    // Fetch Dependabot Alerts
     let alerts = await octokit.paginate(
       octokit.rest.dependabot.listAlertsForRepo,
       {
