@@ -58,6 +58,8 @@ The following outputs are provided by the Action:
 
 Create a workflow file in the repository, such as `.github/workflows/dependabot-alerts.yml`, with the following content:
 
+**Note:** Unfortunately Github Workflow GITHUB_TOKEN does not work with dependabot alerts (https://github.com/orgs/community/discussions/60612). Create a PAT Token with Dependabot Alerts Read permission + Metadata Read permission to have this action working!
+
 ```yaml
 name: Dependabot Alerts Check
 
@@ -79,7 +81,7 @@ jobs:
             - name: Run Dependabot Alerts Check
                 uses: lfventura/dependabot-alerts@main
                 with:
-                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    github_token: ${{ secrets.GH_PAT }}
                     max_high_alerts: 5
                     max_critical_alerts: 2
                     do_not_break_pr_check: false
