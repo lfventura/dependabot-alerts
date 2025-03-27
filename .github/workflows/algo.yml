@@ -7,7 +7,6 @@ on:
   pull_request:
     branches:
       - main
-      - lv_teste
 
 permissions:
   security-events: write
