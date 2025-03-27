@@ -110,8 +110,8 @@ export async function run(): Promise<void> {
     );
 
     // Prepare output summary
-    const summaryTitleSuccess = `# 🟢 CodeScanning Alerts (Main Branch) 🟢`;
-    const summaryTitleFailure = `# 🔴 CodeScanning Alerts (Main Branch) 🔴`;
+    const summaryTitleSuccess = `# 🟢 Dependabot Alerts (Main Branch) 🟢`;
+    const summaryTitleFailure = `# 🔴 Dependabot Alerts (Main Branch) 🔴`;
 
     // BEGIN: Define helper variable for summary breakingMessage
     const breakingMessage =

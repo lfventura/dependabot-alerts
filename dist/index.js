@@ -31850,7 +31850,7 @@ async function run() {
             maxAlertsThreshold[severity] = parseInt(core.getInput(`max_${severity}_alerts`), 10);
         });
         const octokit = github.getOctokit(token);
-        // Fetch Code Scanning Alerts
+        // Fetch Dependabot Alerts
         let alerts = await octokit.paginate(octokit.rest.dependabot.listAlertsForRepo, {
             owner,
             repo,
@@ -31917,8 +31917,8 @@ async function run() {
             ? "Notify only"
             : `Breaks when > ${maxAlertsThreshold[severity]}`}`);
         // Prepare output summary
-        const summaryTitleSuccess = `# 🟢 CodeScanning Alerts (Main Branch) 🟢`;
-        const summaryTitleFailure = `# 🔴 CodeScanning Alerts (Main Branch) 🔴`;
+        const summaryTitleSuccess = `# 🟢 Dependabot Alerts (Main Branch) 🟢`;
+        const summaryTitleFailure = `# 🔴 Dependabot Alerts (Main Branch) 🔴`;
         // BEGIN: Define helper variable for summary breakingMessage
         const breakingMessage = breakingAlerts.length > 0
             ? `
