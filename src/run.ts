@@ -169,7 +169,7 @@ ${summaryLines.length > 0 ? summaryLines.join("\n") : ""}${breakingMessage.lengt
 
       // Check if comment exceeds the maximum length
       if (body.length > maxCommentLength) {
-        const truncatedMessage = `\n**Truncated:** [Go to CodeScanning](https://github.com/${owner}/${repo}/security/code-scanning).`;
+        const truncatedMessage = `\n**Truncated:** [Go to Dependabot](https://github.com/${owner}/${repo}/security/dependabot).`;
         // Truncate the body and add the see more details link
         body = `${commentIdentifier}\n${body.slice(0, maxCommentLength - truncatedMessage.length - commentIdentifier.length)}...\n${truncatedMessage}`;
       }
