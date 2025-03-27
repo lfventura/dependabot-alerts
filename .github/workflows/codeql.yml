@@ -48,6 +48,13 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+    
+    - name: Debug Token Permissions
+      run: |
+        echo "Checking token permissions..."
+        curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+        -H "Accept: application/vnd.github.v3+json" \
+        https://api.github.com/repos/${{ github.repository }}
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
