@@ -1,9 +1,9 @@
-name: 'Check Dependabot Alerts'
+name: 'Check Dependabot Alerts with Break the Build'
 description: 'Check for open dependabot alerts and validate against thresholds.'
 author: 'Lucas Ventura'
 inputs:
   github_token:
-    description: The GitHub token used to create an authenticated client
+    description: The GitHub token used to create an authenticated client. It needs to be a PAT token with the `dependabot` read scope.
     default: ${{ github.token }}
     required: false
   owner:
