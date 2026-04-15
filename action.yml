@@ -44,7 +44,7 @@ outputs:
   low_alerts:
     description: 'Number of low severity alerts'
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
 branding:
   icon: 'shield'
